@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { login, getUserData } from './Auth.redux'
+import { login, getUserData } from '../../redux/Auth.redux'
 import { Button } from 'antd-mobile'
 
 // 两个reducers 每个reducer都有一个state

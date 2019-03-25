@@ -3,7 +3,7 @@ import OneA from '@/views/OneA'
 import OneB from '@/views/OneB'
 import {Button} from 'antd-mobile'
 import { connect } from 'react-redux'
-import {addNum, addNumAsync} from "./index.redux";
+import {addNum, addNumAsync} from "../../redux/index.redux";
 
 
 @connect(
