@@ -13,11 +13,11 @@ import App from './container/app/App'
 import BossInfo from "./container/boss/bossInfo";
 import GeniusInfo from "./container/genius/geniusInfo";
 import Dashboard from "./component/dashboard/Dashboard";
+import Chat from "./component/chat/chat";
 import './config'
 import './style/index.css'
 
 import * as serviceWorker from './serviceWorker';
-
 
 export const store = createStore(reducer, applyMiddleware(thunk))
 
@@ -32,6 +32,7 @@ ReactDOM.render(
                     <Route path = '/register' exact component = {Register}/>
                     <Route path = '/geniusInfo' exact component = {GeniusInfo}/>
                     <Route path = '/bossInfo' exact component = {BossInfo}/>
+                    <Route path = '/chat/:user' exact component = {Chat}/>
                     <Route path = '/App' exact component = {App}/>
                     <Route component = {Dashboard}/>
                 </Switch>

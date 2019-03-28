@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Route, Link, Redirect, Switch} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Button, NavBar } from 'antd-mobile'
+import { connect } from 'react-redux'
 import NavLinkBar from '../navLink/navLinkBar'
 import Boss from "../../container/boss/boss";
-
+import { getMsgList,sendMsg,receiveMsg } from "../../redux/chat.redux";
 
 function Genius(){
     return <h2>牛人中心页面</h2>
@@ -18,9 +19,14 @@ function User(){
     return <h2>个人中心页面</h2>
 }
 
-@connect(state=>state)
+@connect(state=>state,{ getMsgList, receiveMsg })
 class Dashboard extends Component{
-
+    componentDidMount(){
+        if(!this.props.chat.chatMsg.length){
+            this.props.getMsgList()
+            this.props.receiveMsg()
+        }
+    }
     render(){
         const user = this.props.user
         const navList = [
